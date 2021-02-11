@@ -1,0 +1,41 @@
+{
+  "name": "blog-mern-app",
+  "version": "1.0.0",
+  "description": "The blog App with MERN stack ",
+  "main": "index.js",
+  "repository": "git@github.com:vd89/blog-mern-app.git",
+  "author": "vd89 <dixitvora@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "dependencies": {
+    "config": "^3.3.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "concurrently": "^5.3.0",
+    "husky": "^5.0.9",
+    "nodemon": "^2.0.7",
+    "pretty": "^2.0.0",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js",
+    "start": "node --exec babel-node index.js"
+  }
+}
