@@ -6,6 +6,7 @@ import cors from 'cors';
 
 import serverConfig from './serverConfig.js';
 import dbController from './controller/dbController';
+import handler from './lib/handler.js';
 
 const PORT = serverConfig.PORT;
 const ORIGIN = serverConfig.ORIGIN;
@@ -28,6 +29,10 @@ export const serverStarted = async () => {
       next(e);
     }
   });
+
+  // Error handler
+  app.use(handler.notFound);
+  app.use(handler.errHandler);
 
   // Connect to Db
   await dbController();
