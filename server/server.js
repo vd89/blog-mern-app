@@ -7,6 +7,7 @@ import cors from 'cors';
 import serverConfig from './serverConfig.js';
 import dbController from './controller/dbController';
 import handler from './lib/handler.js';
+import blogRoute from './router/blogRoute.js';
 
 const PORT = serverConfig.PORT;
 const ORIGIN = serverConfig.ORIGIN;
@@ -30,6 +31,7 @@ export const serverStarted = async () => {
     }
   });
 
+  app.use('/api', blogRoute);
   // Error handler
   app.use(handler.notFound);
   app.use(handler.errHandler);
