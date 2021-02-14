@@ -31,7 +31,7 @@ export const serverStarted = async () => {
     }
   });
 
-  app.use('/api', blogRoute);
+  app.use('/api/blog', blogRoute);
   // Error handler
   app.use(handler.notFound);
   app.use(handler.errHandler);
