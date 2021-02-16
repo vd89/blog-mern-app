@@ -3,7 +3,7 @@ import Api from 'utils/Api';
 
 export const getAllBlogs = () => async dispatch => {
   try {
-    const { data } = await Api.get('/');
+    const { data } = await Api.get('/blog/');
     console.log(data.result);
     dispatch({
       type: GET_ALL_BLOGS,
@@ -19,8 +19,8 @@ export const getAllBlogs = () => async dispatch => {
 
 export const getBlogById = id => async dispatch => {
   try {
-    const { data } = await Api.get(`/${id}`);
-    console.log(data.result);
+    const { data } = await Api.get(`/blog/${id}`);
+    console.log(data);
     dispatch({
       type: GET_BLOG_BY_ID,
       payload: data.result,
