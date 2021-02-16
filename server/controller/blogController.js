@@ -14,8 +14,8 @@ export default {
   postBlog: async (req, res, next) => {
     try {
       const blogImage = req.file.filename;
-      const { title, subtitle, description } = req.body;
-      const newBlog = new blogModel({ title, subtitle, description, blogImage });
+      const { title, subTitle, description } = req.body;
+      const newBlog = new blogModel({ title, subTitle, description, blogImage });
       await newBlog.save();
       res.status(200).json({ msg: 'Success', result: newBlog });
     } catch (e) {
