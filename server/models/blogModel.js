@@ -8,3 +8,8 @@ const BlogSchema = new Schema({
   description: { type: String },
   blogImage: { type: String },
 });
+
+class Blog {}
+BlogSchema.loadClass(Blog);
+
+export default model('Blog', BlogSchema);

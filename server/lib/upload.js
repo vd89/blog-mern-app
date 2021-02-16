@@ -3,7 +3,7 @@ import path from 'path';
 
 // Set Storage engine
 const storage = multer.diskStorage({
-  destination: '../../client/build/images',
+  destination: 'client/public/images',
   filename: (req, file, cb) => {
     if (file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg') {
       cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
