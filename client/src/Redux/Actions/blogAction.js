@@ -5,7 +5,6 @@ import { setAlert } from './alertAction';
 export const getAllBlogs = () => async dispatch => {
   try {
     const { data } = await Api.get('/blog/');
-    console.log(data.result);
     dispatch({
       type: GET_ALL_BLOGS,
       payload: data.result,

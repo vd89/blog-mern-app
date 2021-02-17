@@ -13,7 +13,7 @@ const BlogCollection = ({ blogs, loading }) => {
         ) : (
           <div className="card-columns">
             {blogs.map(blog => (
-              <BlogCard {...blog} />
+              <BlogCard key={blog._id} {...blog} />
             ))}
           </div>
         )}
