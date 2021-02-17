@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React, { useEffect } from 'react';
 import { getAllBlogs } from 'Redux/Actions/blogAction';
 import Jumbotron from './Jumbotron';
+import BlogCollection from './BlogCollection';
 
 const Home = ({ getAllBlogs, blogs }) => {
   console.log(blogs[0]);
@@ -11,7 +12,7 @@ const Home = ({ getAllBlogs, blogs }) => {
   return (
     <div>
       <Jumbotron {...blogs[0]} />
-      <h1>This is home Page</h1>
+      <BlogCollection />
     </div>
   );
 };

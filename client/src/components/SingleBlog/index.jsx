@@ -6,7 +6,6 @@ import BlogCard from './BlogCard';
 
 const SingleBlog = ({ getBlogById, loading, blog }) => {
   const { id } = useParams();
-  console.log(blog);
   useEffect(() => {
     getBlogById(id);
   }, [getBlogById, id]);
