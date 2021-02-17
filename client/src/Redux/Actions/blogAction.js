@@ -21,7 +21,6 @@ export const getAllBlogs = () => async dispatch => {
 export const getBlogById = id => async dispatch => {
   try {
     const { data } = await Api.get(`/blog/${id}`);
-    console.log(data);
     dispatch({
       type: GET_BLOG_BY_ID,
       payload: data.result,
@@ -37,7 +36,6 @@ export const getBlogById = id => async dispatch => {
 export const createBlog = formData => async dispatch => {
   try {
     const { data } = await Api.post(`/blog/create`, formData);
-    console.log(data.result);
     dispatch({
       type: CREATE_BLOG,
       payload: data.result,

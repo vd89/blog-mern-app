@@ -5,7 +5,6 @@ import Jumbotron from './Jumbotron';
 import BlogCollection from './BlogCollection';
 
 const Home = ({ getAllBlogs, blogs }) => {
-  console.log(blogs[0]);
   useEffect(() => {
     getAllBlogs();
   }, [getAllBlogs]);
