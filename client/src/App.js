@@ -8,6 +8,7 @@ import Home from 'components/Home/index';
 import NotFound from 'components/NotFound';
 import Store from 'Redux/Store';
 import SingleBlog from 'components/SingleBlog';
+import EditBlog from 'components/CreateBlog/EditBlog';
 
 import './App.css';
 
@@ -18,6 +19,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/create" component={CreateBlog} />
+          <Route path="/edit" component={EditBlog} />
+
           <Route path="/about" component={About} />
           <Route exact path="/:id" component={SingleBlog} />
           <Route path="*" component={NotFound} />

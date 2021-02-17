@@ -11,7 +11,7 @@ const BlogCollection = ({ blogs, loading }) => {
             <h1>Loading......</h1>
           </div>
         ) : (
-          <div className="card-deck">
+          <div className="card-columns">
             {blogs.map(blog => (
               <BlogCard {...blog} />
             ))}

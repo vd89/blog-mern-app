@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { createBlog } from 'Redux/Actions/blogAction';
 
 const BlogForm = ({ createBlog }) => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     title: '',
     subTitle: '',
@@ -15,7 +17,7 @@ const BlogForm = ({ createBlog }) => {
   const onSubmitHandler = e => {
     e.preventDefault();
     createBlog(formData);
-    console.log(formData);
+    history.push('/');
   };
   return (
     <div className="container center mt-5 mb-5">
