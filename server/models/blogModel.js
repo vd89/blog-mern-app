@@ -6,7 +6,6 @@ const BlogSchema = new Schema({
   title: { type: String },
   subTitle: { type: String },
   description: { type: String },
-  blogImage: { type: String },
 });
 
 class Blog {}

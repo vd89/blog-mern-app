@@ -9,7 +9,7 @@ const { getAllBlog, postBlog, getBlogByID, deleteBlog, updateBlog } = blogContro
 blogRoute.get('/', getAllBlog);
 
 // Create blog
-blogRoute.post('/create', upload, postBlog);
+blogRoute.post('/create', postBlog);
 
 // Get single blog by id
 blogRoute.get('/:id', getBlogByID);

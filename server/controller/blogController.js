@@ -13,9 +13,8 @@ export default {
   },
   postBlog: async (req, res, next) => {
     try {
-      const blogImage = req.file.filename;
       const { title, subTitle, description } = req.body;
-      const newBlog = new blogModel({ title, subTitle, description, blogImage });
+      const newBlog = new blogModel({ title, subTitle, description });
       await newBlog.save();
       res.status(200).json({ msg: 'Success', result: newBlog });
     } catch (e) {
@@ -46,9 +45,8 @@ export default {
   updateBlog: async (req, res, next) => {
     try {
       const id = req.params.id;
-      const blogImage = req.file.filename;
       const { title, subtitle, description } = req.body;
-      await blogModel.findByIdAndUpdate(id, { title, subtitle, description, blogImage });
+      await blogModel.findByIdAndUpdate(id, { title, subtitle, description });
       const neBlog = await blogModel.findById(id);
       res.status(200).json({ msg: 'Success', result: neBlog });
     } catch (e) {
